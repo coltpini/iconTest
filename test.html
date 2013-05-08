@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title></title>	
+		
+		<style>
+			@font-face {
+			    font-family: 'chIconsRegular';
+			    src: url('chicons-regular-webfont.ttf');			   
+			    font-weight: normal;
+			    font-style: normal;			
+			}
+			.demoer {font-family: 'chIconsRegular';
+				font-size: 34px;}
+			
+			span.icon {				
+				font-family: 'chIconsRegular';
+				font-size: 34px;	
+				cursor: pointer;
+				display: inline-block;
+				padding: 20px;	
+			}
+			
+			span.icon span {
+				position: absolute;
+			}
+			
+			.light{
+				color: #BBBDBF;
+			}
+			.dark{				
+				color: #94938F;
+			}
+			.white{
+				color: #fff;
+			}	
+			
+			span.icon:hover .light{
+				color: #929497;
+			}
+			span.icon:hover .dark{				
+				color: #6D6E70;
+			}			
+			
+			.print.active span:nth-child(4), .print.active span:nth-child(5){
+				margin-top: 15px;
+				
+				-webkit-transition: all 1s ease-out;  /* Saf3.2+, Chrome */
+			       -moz-transition: all 1s ease-out;  /* FF4+ */
+			        -ms-transition: all 1s ease-out;  /* IE10 */
+			         -o-transition: all 1s ease-out;  /* Opera 10.5+ */
+			            transition: all 1s ease-out;
+			}
+			
+			.print.active span:last-child{						
+				color: #9c9;									
+						 										
+				-webkit-transition: all 1s ease-out;  /* Saf3.2+, Chrome */
+			       -moz-transition: all 1s ease-out;  /* FF4+ */
+			        -ms-transition: all 1s ease-out;  /* IE10 */
+			         -o-transition: all 1s ease-out;  /* Opera 10.5+ */
+			            transition: all 1s ease-out;			
+			}			 										
+						 										
+			.print .text{										
+				margin:0;										
+				opacity: 0;										
+				xfont-family: Garamond;							
+				xfont-size: 10px;								
+			}			 										
+						 										
+			.print.active .text{								
+				margin:15px 0 0 0;								
+			}			 										
+						 										
+			.print.active .text{								
+				opacity: .8;									
+				-webkit-transition: all 1s ease-out;  /* Saf3.2+, Chrome */
+			       -moz-transition: all 1s ease-out;  /* FF4+ */
+			        -ms-transition: all 1s ease-out;  /* IE10 */
+			         -o-transition: all 1s ease-out;  /* Opera 10.5+ */
+			            transition: all 1s ease-out;			
+			}
+					
+		</style>
+	</head>
+	<body>	
+		<span class="fitSize icon">
+			<span class="light">B</span>
+			<span class="dark">A</span>			
+		</span>
+		<span class="fitWidthSize icon">
+			<span class="light">C</span>
+			<span class="dark">A</span>			
+		</span>
+		<span class="fitHeightSize icon">
+			<span class="light">D</span>
+			<span class="dark">A</span>
+		</span>
+		<span class="actualSize icon">
+			<span class="light">E</span>
+			<span class="dark">A</span>
+		</span>
+		<span class="actualSize icon">
+			<span class="dark">G</span>
+		</span>
+		<span class="print icon">
+			<span class="dark">N</span>
+			<span class="light">L</span>
+			<span class="white">M</span>
+			<span class="light">L</span>
+			<span class="white">M</span>
+			<span class="light text">P</span>	
+			<span class="dark">I</span>
+			<span class="white">J</span>
+			<span class="dark">K</span>			
+		</span>
+		<script>
+			document.querySelector('.print').addEventListener('click',printHandler);
+			function printHandler(e){
+				this.classList.add('active');
+				setTimeout(function(){document.querySelector('.print.active').classList.remove('active');}, 1500);
+			}
+		</script>	
+	</body>
+</html>
